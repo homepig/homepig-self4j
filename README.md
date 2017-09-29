@@ -1,2 +1,2 @@
-# homepig-self4j
-self4j框架学习
+# homepig-slf4j
+slf4j框架学习
