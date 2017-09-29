@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+scan:
+scanPeriod:
+debug:
+packagingData:
+ -->
+<configuration scan="true" scanPeriod="10 seconds" debug="false" packagingData="true">
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss:SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 配置类记录器日志级别及输出源 -->
+    <logger name="com.homepig.Foo" level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <!-- 配置包下记录器日志级别及输出源 -->
+    <logger name="com.homepig" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <!-- 配置根记录器日志级别及输出源 -->
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
